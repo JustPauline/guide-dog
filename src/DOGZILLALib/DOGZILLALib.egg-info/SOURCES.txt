@@ -1,0 +1,7 @@
+setup.py
+DOGZILLALib/DOGZILLALib.py
+DOGZILLALib/__init__.py
+DOGZILLALib.egg-info/PKG-INFO
+DOGZILLALib.egg-info/SOURCES.txt
+DOGZILLALib.egg-info/dependency_links.txt
+DOGZILLALib.egg-info/top_level.txt

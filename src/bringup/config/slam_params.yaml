@@ -1,0 +1,48 @@
+# slam_params.yaml
+
+slam_toolbox:
+  ros__parameters:
+
+    #-- TF & frame settings -------------------------------------------------------
+    use_sim_time: false
+    map_frame: map
+    odom_frame: odom
+    base_frame: base_footprint        # match your robot’s base frame
+    odom_topic: /odometry/filtered
+    publish_tf: true
+    use_pose_from_tf: true
+    use_pose_topic: false
+
+    #-- LiDAR sensor settings ----------------------------------------------------
+    scan_topic: /scan
+    use_scan_sensor: true
+    min_laser_range: 0.11
+    max_laser_range: 20.0
+
+    #-- TF/message-filter tuning ------------------------------------------------
+    # avoid “Message Filter dropping message … queue is full”
+    filter_queue_size: 100
+    transform_tolerance: 0.5          # accept scans up to 0.5 s old
+    transform_timeout: 0.20           # wait 200 ms for TF lookups
+
+    #-- Mapping mode ------------------------------------------------------------
+    mode: online_async                 # asynchronous mapping
+    slam_only: false
+    start_at_dock: false
+    use_map_topic: false
+    allow_unknown_initial_pose: true
+
+    #-- Map & performance tuning ------------------------------------------------
+    resolution: 0.05                   # 5 cm cells
+    map_update_interval: 0.5           # process map twice a second
+    map_publish_period: 0.5            # force /map republish every 0.5 s
+    minimum_time_interval: 0.10        # process scans up to 10 Hz
+    tf_buffer_duration: 30.0           # keep 30 s of TF history
+
+    #-- Scan & pose publishing -------------------------------------------------
+    throttle_scans: 1                  # don’t drop any scans
+    pose_publish_period: 0.05          # robot pose at 20 Hz
+    transform_publish_period: 0.05     # map?odom TF at 20 Hz
+
+    #-- Debug & logging ---------------------------------------------------------
+    debug_logging: true

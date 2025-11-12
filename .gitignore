@@ -1,0 +1,16 @@
+# ROS 2 colcon workspace ignore
+build/
+install/
+log/
+
+# Python cache
+__pycache__/
+*.pyc
+
+# Misc
+*.swp
+*.bak
+.DS_Store
+.idea/
+.vscode/
+core
